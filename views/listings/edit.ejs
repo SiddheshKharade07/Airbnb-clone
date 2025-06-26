@@ -19,6 +19,24 @@
       </div>
 
       <div class="mb-3">
+      <label for="category" class="form-label">Category</label>
+      <select name="listing[category]" class="form-select" required>
+        <option value="<%= listing.category %>" selected><%= listing.category %></option>
+        <option value="rooms">rooms</option>
+        <option value="mountains">mountains</option>
+        <option value="farms">farms</option>
+        <option value="arctic">arctic</option>
+        <option value="beach">beach</option>
+        <option value="iconic cities">iconic cities</option>
+        <option value="amazing pools">amazing pools</option>
+        <option value="camping">camping</option>
+        <option value="domes">domes</option>
+        <option value="boats">boats</option>
+      </select>
+      <div class="invalid-feedback">Please select a category</div>
+    </div>
+
+      <div class="mb-3">
         <p>Original Listing Image</p>
         <img src="<%= originalImageUrl %>" alt="<%= listing.image.filename %>">
       </div>

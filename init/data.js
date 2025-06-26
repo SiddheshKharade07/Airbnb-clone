@@ -8,7 +8,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 1500,
-    location: "Malibu",
+    location: "Malibu, United States",
     country: "United States",
   },
   {
@@ -20,7 +20,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 1200,
-    location: "New York City",
+    location: "New York City, United States",
     country: "United States",
   },
   {
@@ -32,7 +32,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG90ZWxzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 1000,
-    location: "Aspen",
+    location: "Aspen, United States",
     country: "United States",
   },
   {
@@ -44,7 +44,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 2500,
-    location: "Florence",
+    location: "Florence, Italy",
     country: "Italy",
   },
   {
@@ -56,7 +56,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGhvdGVsc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 800,
-    location: "Portland",
+    location: "Portland, United States",
     country: "United States",
   },
   {
@@ -68,7 +68,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGhvdGVsc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 2000,
-    location: "Cancun",
+    location: "Cancun, Mexico",
     country: "Mexico",
   },
   {
@@ -80,7 +80,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1vdW50YWlufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 900,
-    location: "Lake Tahoe",
+    location: "Lake Tahoe, United States",
     country: "United States",
   },
   {
@@ -92,7 +92,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1622396481328-9b1b78cdd9fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2t5JTIwdmFjYXRpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 3500,
-    location: "Los Angeles",
+    location: "Los Angeles, United States",
     country: "United States",
   },
   {
@@ -104,7 +104,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNreSUyMHZhY2F0aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 3000,
-    location: "Verbier",
+    location: "Verbier, Switzerland",
     country: "Switzerland",
   },
   {
@@ -116,7 +116,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fG1vdW50YWlufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 4000,
-    location: "Serengeti National Park",
+    location: "Serengeti National Park, Tanzania",
     country: "Tanzania",
   },
   {
@@ -128,7 +128,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FtcGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 1800,
-    location: "Amsterdam",
+    location: "Amsterdam, Netherlands",
     country: "Netherlands",
   },
   {
@@ -152,7 +152,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1602088113235-229c19758e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmVhY2glMjB2YWNhdGlvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 1200,
-    location: "Cotswolds",
+    location: "Cotswolds, United Kingdom",
     country: "United Kingdom",
   },
   {
@@ -164,7 +164,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1533619239233-6280475a633a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNreSUyMHZhY2F0aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 2200,
-    location: "Boston",
+    location: "Boston, United States",
     country: "United States",
   },
   {
@@ -176,7 +176,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1602391833977-358a52198938?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGNhbXBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 1800,
-    location: "Bali",
+    location: "Bali, Indonesia",
     country: "Indonesia",
   },
   {
@@ -188,7 +188,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 1500,
-    location: "Banff",
+    location: "Banff, Canada",
     country: "Canada",
   },
   {
@@ -200,7 +200,7 @@ const sampleListings = [
       url: "https://plus.unsplash.com/premium_photo-1670963964797-942df1804579?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 1600,
-    location: "Miami",
+    location: "Miami, United States",
     country: "United States",
   },
   {
@@ -212,7 +212,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1470165301023-58dab8118cc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 3000,
-    location: "Phuket",
+    location: "Phuket, Thailand",
     country: "Thailand",
   },
   {
@@ -224,7 +224,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1585543805890-6051f7829f98?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGJlYWNoJTIwdmFjYXRpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 4000,
-    location: "Scottish Highlands",
+    location: "Scottish Highlands, United Kingdom",
     country: "United Kingdom",
   },
   {
@@ -236,7 +236,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1518684079-3c830dcef090?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHViYWl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 5000,
-    location: "Dubai",
+    location: "Dubai, nited Arab Emirates",
     country: "United Arab Emirates",
   },
   {
@@ -248,7 +248,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1586375300773-8384e3e4916f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 1100,
-    location: "Montana",
+    location: "Montana, United States",
     country: "United States",
   },
   {
@@ -260,7 +260,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dmlsbGF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 2500,
-    location: "Mykonos",
+    location: "Mykonos, Greece",
     country: "Greece",
   },
   {
@@ -284,7 +284,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1587381420270-3e1a5b9e6904?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 1600,
-    location: "Charleston",
+    location: "Charleston, United States",
     country: "United States",
   },
   {
@@ -296,7 +296,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1480796927426-f609979314bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHRva3lvfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 2000,
-    location: "Tokyo",
+    location: "Tokyo, Japan",
     country: "Japan",
   },
   {
@@ -308,7 +308,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1578645510447-e20b4311e3ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fGNhbXBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 1200,
-    location: "New Hampshire",
+    location: "New Hampshire, United States",
     country: "United States",
   },
   {
@@ -332,7 +332,7 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGxha2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 4000,
-    location: "Aspen",
+    location: "Aspen, United States",
     country: "United States",
   },
   {

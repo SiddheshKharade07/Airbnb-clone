@@ -30,6 +30,11 @@ module.exports.createListing = async (req, res, next) => {
     })
     .send()
 
+    if(!response.body?.features?.[0]?.geometry) {
+        req.flash("error", "Invalid Location");
+        return res.redirect("/listings/new");
+    }
+
     let url = req.file.path;
     let filename = req.file.filename;
     const newListing = new Listing(req.body.listing);
@@ -58,7 +63,18 @@ module.exports.renderEditForm = async (req, res) => {
 
 module.exports.updateListing = async (req, res) => {
     let {id} = req.params;
-    let listing = await Listing.findByIdAndUpdate(id, {...req.body.listing});
+    let response = await geocodingClient.forwardGeocode({
+        query: req.body.listing.location,
+        limit: 1
+    })
+    .send()
+
+    if(!response.body?.features?.[0]?.geometry) {
+        req.flash("error", "Invalid Location");
+        return res.redirect(`/listings/${id}/edit`);
+    }
+
+    let listing = await Listing.findByIdAndUpdate(id, {...req.body.listing, geometry: response.body.features[0].geometry});
 
     if(typeof req.file !== "undefined") {
         let url = req.file.path;
