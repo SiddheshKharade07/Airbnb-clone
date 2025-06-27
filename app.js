@@ -20,6 +20,9 @@ const User = require("./models/user");
 const listingRouter = require("./routes/listing");
 const reviewRouter = require("./routes/review");
 const userRouter = require("./routes/user");
+const filterRouter = require("./routes/filter");
+
+const Listing = require("./models/listing");
 
 const dbUrl = process.env.ATLASDB_URL;
 main()
@@ -89,10 +92,17 @@ app.use((req, res, next) => {
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
+app.use("/listings/filter", filterRouter);
 
 app.get("/", (req, res) => {
     res.redirect("/listings");
 });
+
+// filters
+// app.get("/listings/filter/farms", async (req, res) => {
+//     let allListings = await Listing.find({category: "farms"});
+//     res.render("listings/index", {allListings});
+// });
 
 app.use((req, res, next) => {
     next(new ExpressError(404, "Page Not Found!"));
