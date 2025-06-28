@@ -33,6 +33,36 @@
                 </form>
             </div>
         <% } %>
+
+    <!-- </div>
+    <hr class="col-8 offset-3">
+    <div class="col-8 offset-3 ami-container">
+        <hr>
+        <h4>What this place offers</h4>
+            <div class="one ami">
+                <img src="/images/balcony.png" alt="balcony"> Balcony
+            </div>
+            <div class="two ami">
+                <img src="/images/air-conditioner.png" alt="air-conditioner"> <span >air-conditioner</span>
+            </div>
+            <div class="one ami">
+                <img src="/images/balcony.png" alt="balcony"> Balcony
+            </div>
+            <div class="two ami">
+                <img src="/images/air-conditioner.png" alt="air-conditioner"> <span >air-conditioner</span>
+            </div>
+    </div> -->
+
+        <% if(listing.amenities.length > 0) { %>
+            <hr class="col-8 offset-3">
+            <div class="col-8 offset-3 ami-container">
+            <h4>What this place offers</h4>
+            <% for(let data of listing.amenities) { %>
+                <div class="one ami">
+                <img src="/images/<%= data %>.png" alt="<%= data %>"> <span><%= data %></span>
+            </div>
+            <% } %>
+        <% } %>
         
 
         <div class="col-8 offset-3">

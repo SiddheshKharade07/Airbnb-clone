@@ -1,0 +1,27 @@
+.ami {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 1.5rem;
+    font-size: large;
+    font-weight: 500;
+}
+
+.ami-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 2rem 0 2rem 0;
+}
+
+.ami-container h4 {
+    margin-right: 60%;
+    margin-bottom: 1rem;
+}
+
+.ami img {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.8rem;
+}
