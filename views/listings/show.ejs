@@ -34,34 +34,17 @@
             </div>
         <% } %>
 
-    <!-- </div>
-    <hr class="col-8 offset-3">
-    <div class="col-8 offset-3 ami-container">
-        <hr>
-        <h4>What this place offers</h4>
-            <div class="one ami">
-                <img src="/images/balcony.png" alt="balcony"> Balcony
-            </div>
-            <div class="two ami">
-                <img src="/images/air-conditioner.png" alt="air-conditioner"> <span >air-conditioner</span>
-            </div>
-            <div class="one ami">
-                <img src="/images/balcony.png" alt="balcony"> Balcony
-            </div>
-            <div class="two ami">
-                <img src="/images/air-conditioner.png" alt="air-conditioner"> <span >air-conditioner</span>
-            </div>
-    </div> -->
 
         <% if(listing.amenities.length > 0) { %>
-            <hr class="col-8 offset-3">
+            <hr class="col-8 offset-3 hr-line">
             <div class="col-8 offset-3 ami-container">
             <h4>What this place offers</h4>
-            <% for(let data of listing.amenities) { %>
-                <div class="one ami">
-                <img src="/images/<%= data %>.png" alt="<%= data %>"> <span><%= data %></span>
-            </div>
+                <% for(let data of listing.amenities) { %>
+                    <div class="one ami">
+                    <img src="/images/<%= data %>.png" alt="<%= data %>"> <span><%= data %></span>
+                </div>
             <% } %>
+            </div>
         <% } %>
         
 
@@ -70,11 +53,6 @@
             <% if(currUser) { %>
                 <h4>Leave a Review</h4>
                 <form action="/listings/<%= listing._id %>/reviews" method="post" class="needs-validation" novalidate>
-                    <!-- <div class="mb-3 mt-3">
-                        <label for="rating" class="form-label">Rating</label>
-                        <input type="range" min="1" max="5" name="review[rating]" id="rating" class="form-range">
-                    </div> -->
-
                     <div class="mb-3 mt-3">
                         <label for="rating" class="form-label">Rating</label>
                         <fieldset class="starability-slot">
