@@ -20,8 +20,11 @@
 }
 
 .ami-container h4 {
+    display: block;
+}
+
+.ami-heading {
     margin-right: 60%;
-    margin-bottom: 1rem;
 }
 
 .ami img {

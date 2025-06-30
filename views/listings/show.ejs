@@ -38,16 +38,23 @@
         <% if(listing.amenities.length > 0) { %>
             <hr class="col-8 offset-3 hr-line">
             <div class="col-8 offset-3 ami-container">
-            <h4>What this place offers</h4>
-                <% for(let data of listing.amenities) { %>
-                    <div class="one ami">
-                    <img src="/images/<%= data %>.png" alt="<%= data %>"> <span><%= data %></span>
+                <h4>What this place offers</h4>
+                <% for(let category in amenities) {
+                    const categoryAmenities = amenities[category];
+                    if(categoryAmenities.length > 0) { %>
+                <h5 class="s-category py-1 px-0 mt-4 ami"><%= category %></h5>
+                <div class="row ps-3">
+                    <% for(let amenity of categoryAmenities) { %>
+                    <div class="col-8 offset-3 col-md-4 ami">
+                        <img src="/images/<%= amenity %>.png" alt="<%= amenity %>" class="me-2" width="24" height="24">
+                        <span><%= amenity %></span>
+                    </div>
+                    <% } %>
                 </div>
-            <% } %>
+                <% } } %>
             </div>
         <% } %>
         
-
         <div class="col-8 offset-3">
             <hr>
             <% if(currUser) { %>

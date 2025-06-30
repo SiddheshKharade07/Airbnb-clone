@@ -2,7 +2,7 @@ const Listing = require("../models/listing");
 const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const mapToken = process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
-const allAmenities = require("../utils/amenities");
+const {allAmenities, groupAmenitiesByCategory} = require("../utils/amenities");
 
 module.exports.index = async (req, res) => {
     const allListings = await Listing.find({});
@@ -10,7 +10,9 @@ module.exports.index = async (req, res) => {
 }
 
 module.exports.renderNewForm = (req, res) => {
-    res.render("listings/new.ejs", {amenities: allAmenities});
+    const amenities = Object.values(allAmenities).flat();
+    console.log(amenities);
+    res.render("listings/new.ejs", {amenities});
 }
 
 module.exports.showListing = async(req, res) => {
@@ -20,7 +22,8 @@ module.exports.showListing = async(req, res) => {
         req.flash("error", "Listing you requested for does not exists");
         res.redirect("/listings");
     } else {
-        res.render("listings/show.ejs", {listing});
+        const amenities = groupAmenitiesByCategory(listing.amenities);
+        res.render("listings/show.ejs", {listing, amenities});
     }
 }
 
@@ -56,10 +59,11 @@ module.exports.renderEditForm = async (req, res) => {
         return res.redirect("/listings");
     }
 
+    const amenities = Object.values(allAmenities).flat();
     let originalImageUrl = listing.image.url;
     originalImageUrl = originalImageUrl.replace("/upload", "/upload/w_250");
 
-    res.render("listings/edit.ejs", {listing, originalImageUrl, amenities: allAmenities});
+    res.render("listings/edit.ejs", {listing, originalImageUrl});
 }
 
 module.exports.updateListing = async (req, res) => {
