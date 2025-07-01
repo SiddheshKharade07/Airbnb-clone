@@ -49,6 +49,27 @@
         />
       </div>
 
+      <div class="mb-3">
+          <p class="d-inline-flex gap-1">
+            <a class="btn btn-outline-secondary" data-bs-toggle="collapse" href=".amenities" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Edit amenities
+            </a>
+          </p>
+
+          <div class="collapse amenities mb-3" id="collapseExample">
+            <div class="form-check col">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
+              <% for(let amenity of amenities) { %>
+                <div class="form-check col">
+                  <input class="form-check-input" type="checkbox" name="listing[amenities][]" value="<%= amenity %>" id="<%= amenity.replace(/\s+/g, '') %>"  <%= listing.amenities.includes(amenity) ? "checked" : "" %>>
+                  <label class="form-check-label" for="<%= amenity.replace(/\s+/g, '') %>"><%= amenity %></label>
+                </div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="row">
         <div class="mb-3 col-4">
           <label for="price" class="form-label">Price</label>

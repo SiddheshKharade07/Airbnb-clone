@@ -22,8 +22,6 @@ const reviewRouter = require("./routes/review");
 const userRouter = require("./routes/user");
 const filterRouter = require("./routes/filter");
 
-const Listing = require("./models/listing");
-
 const dbUrl = process.env.ATLASDB_URL;
 main()
 .then(() => {
