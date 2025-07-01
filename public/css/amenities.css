@@ -1,34 +1,55 @@
-.ami {
-    display: flex;
-    width: 50%;
-    align-items: center;
-    justify-content: flex-start;
-    padding-bottom: 1.5rem;
-    font-size: large;
-    font-weight: 500;
-}
-
+/* Shared styles */
 .hr-line {
-    margin-top: 2rem;
-}
-
-.ami-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    padding: 0 0.75rem 1rem 0.75rem;
-}
-
-.ami-container h4 {
-    display: block;
+  margin-top: 2rem;
+  border-top: 2px solid #ccc;
 }
 
 .ami-heading {
-    margin-right: 60%;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.category-heading {
+  font-size: 1.1rem;
+  font-weight: 550;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.ami-category ul {
+  list-style: none;
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.ami-category ul li {
+    padding-bottom: 0.5rem;
+}
+
+.ami {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
 }
 
 .ami img {
-    height: 1.5rem;
-    width: 1.5rem;
-    margin-right: 0.8rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.6rem;
+}
+
+.amenity-columns {
+  column-count: 2;
+  column-gap: 2rem;
+  padding: 0.5rem 0;
+}
+
+.ami-category {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  padding-left: 0.5rem;
 }
