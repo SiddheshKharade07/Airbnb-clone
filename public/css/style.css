@@ -118,6 +118,7 @@ body {
 .edit-btn {
     background-color: #fe424d !important;
     border: none !important;
+    margin-left: 0 !important;
 }
 
 /* Show page */
@@ -164,14 +165,12 @@ body {
 }
 
 .booking-info {
+    position: sticky !important;
+    top: 5rem !important;
     height: 350px !important;
     margin-left: 2.7rem !important;
     margin-right: 1.7rem;
     margin-top: 1rem;
-}
-
-.booking-info .card-body {
-    padding-bottom: 0.5rem !important;
 }
 
 #reserve-btn-para {

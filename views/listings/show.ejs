@@ -22,11 +22,11 @@
                 
                 <%- include("../includes/amenities.ejs") %>
             </div>
-            <div class="col-md-5 mt-4 position-sticky">
-                <div class="booking-info card top-0 shadow-sm p-4 border rounded-4">
+            <div class="col-md-5 mt-4">
+                <div class="booking-info card shadow-sm p-4 border rounded-4">
                     <div class="card-body">
                     <!-- Price Info -->
-                    <h4 class="text-primary fw-bold mb-3">&#x20B9; <%= listing.price.toLocaleString("en-IN") %></h4>
+                    <h4 class="text-primary fw-bold mb-3 text-decoration-underline">&#x20B9; <%= listing.price.toLocaleString("en-IN") %></h4>
 
                     <!-- Check In/Out -->
                     <div class="reserve-info">
@@ -54,12 +54,8 @@
                     </div>
                 </div>
                 </div>
-            </div>
-        </div>
-        <br>
 
-        
-        <% if(currUser && currUser._id == listing.owner.id) { %>
+                <% if(currUser && currUser._id == listing.owner.id) { %>
             <div class="btns">
                 <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-3 edit-btn">Edit</a>
 
@@ -68,6 +64,9 @@
                 </form>
             </div>
         <% } %>
+            </div>
+        </div>
+        <br>
         
         <div class="col-10 offset-1">
             <hr>
