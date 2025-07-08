@@ -7,18 +7,53 @@
 </script>
 
     <div class="row mt-3">
-        <div class="col-8 offset-3">
+        <div class="col-10 offset-1">
             <h3><%= listing.title %></h3>
         </div>
 
-        <div class="card col-6 offset-3 show-card listing-card">
+        <div class="card col-10 offset-1 show-card listing-card">
             <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="Listing_image">
-            <div class="card-body">
-                <p class="card-text">Owned by <i><%= listing.owner.username %></i></p>
+            <div class="row">
+                <div class="card-body col-7">
+                <h5 class="card-text mb-4">Owned by <i><%= listing.owner.username %></i></h5>
                 <p class="card-text"><%= listing.description %></p>
-                <p class="card-text">&#x20B9; <%= listing.price.toLocaleString("en-IN") %></p>
                 <p class="card-text"><%= listing.location %></p>
                 <p class="card-text"><%= listing.country %></p>
+                
+                <%- include("../includes/amenities.ejs") %>
+            </div>
+            <div class="col-md-5 mt-4 position-sticky">
+                <div class="booking-info card top-0 shadow-sm p-4 border rounded-4">
+                    <div class="card-body">
+                    <!-- Price Info -->
+                    <h4 class="text-primary fw-bold mb-3">&#x20B9; <%= listing.price.toLocaleString("en-IN") %></h4>
+
+                    <!-- Check In/Out -->
+                    <div class="reserve-info">
+                        <div class="row mb-3">
+                            <div class="check-info-one col-6">
+                            <label class="form-label text-muted">Check-in</label>
+                            <div class="fw-semibold">12 July 2025</div>
+                            </div>
+                            <div class="check-info-two col-6">
+                            <label class="form-label text-muted">Check-out</label>
+                            <div class="fw-semibold">14 July 2025</div>
+                            </div>
+                        </div>
+
+                        <!-- Guest Info -->
+                        <div class="border-top pt-3">
+                            <label class="form-label text-muted">Guests</label>
+                            <div class="fw-semibold">2 Adults, 1 Child</div>
+                        </div>
+                    </div>
+
+                    <!-- button -->
+                    <div class="reserve-btn btn"><h5>Reserve</h5></div>
+                    <p id="reserve-btn-para">you won't be charged yet</p>
+                    </div>
+                </div>
+                </div>
             </div>
         </div>
         <br>
@@ -33,11 +68,8 @@
                 </form>
             </div>
         <% } %>
-
-
-        <%- include("../includes/amenities.ejs") %>
         
-        <div class="col-8 offset-3">
+        <div class="col-10 offset-1">
             <hr>
             <% if(currUser) { %>
                 <h4>Leave a Review</h4>
@@ -89,7 +121,7 @@
             
         </div>
 
-        <div class="col-6 offset-3 mb-3 ">
+        <div class="col-10 offset-1 mb-3 ">
             <h3>Where you'll be</h3>
             <div id="map"></div>
         </div>

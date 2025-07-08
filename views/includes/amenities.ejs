@@ -1,6 +1,6 @@
 <% if (listing.amenities.length > 0) { %>
-        <hr class="col-8 offset-3 hr-line">
-        <div class="col-8 offset-3">
+         <hr class="hr-line">
+        <!-- <div class="col-8 offset-3"> -->
             <h4 class="ami-heading">What this place offers</h4>
             <div class="row">
             <% let shown = 0; %>
@@ -28,7 +28,7 @@
             <a class="btn btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#amenitiesModal">
             View More
             </a>
-        </div>
+        
 
         <div class="modal fade" id="amenitiesModal" tabindex="-1" aria-labelledby="amenitiesModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-scrollable">

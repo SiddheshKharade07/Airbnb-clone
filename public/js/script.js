@@ -15,4 +15,17 @@
       form.classList.add('was-validated')
     }, false)
   })
-})()
+})();
+
+let taxSwitch = document.getElementById("switchCheckDefault");
+    taxSwitch.addEventListener("click", () => {
+      let taxInfo = document.getElementsByClassName("tax-info");
+      console.log(taxInfo);
+      for(info of taxInfo) {
+        if(info.style.display != "inline") {
+          info.style.display = "inline";
+        } else {
+          info.style.display = "none";
+        }
+      }
+    });
