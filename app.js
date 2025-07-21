@@ -31,7 +31,6 @@ main()
     console.log(err);
 });
 
-
 async function main() {
     await mongoose.connect(dbUrl);
 }
@@ -67,7 +66,6 @@ const sessionOptions = {
     }
 };
 
-
 app.use(flash());
 app.use(session(sessionOptions));
 
@@ -96,12 +94,6 @@ app.get("/", (req, res) => {
     res.redirect("/listings");
 });
 
-// filters
-// app.get("/listings/filter/farms", async (req, res) => {
-//     let allListings = await Listing.find({category: "farms"});
-//     res.render("listings/index", {allListings});
-// });
-
 app.use((req, res, next) => {
     next(new ExpressError(404, "Page Not Found!"));
 });
@@ -109,7 +101,6 @@ app.use((req, res, next) => {
 // custom error handling
 app.use((err, req, res, next) => {
     let { statusCode = 500, message = "Something Went Wrong" } = err;
-    console.log(err);
     res.status(statusCode).render("error.ejs", {message});
 });
 

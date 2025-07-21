@@ -3,6 +3,8 @@ const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const mapToken = process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 const {allAmenities, groupAmenitiesByCategory} = require("../utils/amenities");
+const { cloudinary } = require("../cloudConfig");
+const fs = require("fs");
 
 module.exports.index = async (req, res) => {
     const allListings = await Listing.find({});
@@ -27,29 +29,39 @@ module.exports.showListing = async(req, res) => {
     }
 }
 
-module.exports.createListing = async (req, res, next) => {
-    let response = await geocodingClient.forwardGeocode({
+module.exports.createListing = async (req, res) => {
+    const response = await geocodingClient.forwardGeocode({
         query: req.body.listing.location,
         limit: 1
-    })
-    .send()
+    }).send();
 
-    if(!response.body?.features?.[0]?.geometry) {
+    if (!response.body?.features?.[0]?.geometry) {
         req.flash("error", "Invalid Location");
         return res.redirect("/listings/new");
     }
 
-    let url = req.file.path;
-    let filename = req.file.filename;
     const newListing = new Listing(req.body.listing);
     newListing.owner = req.user._id;
-    newListing.image = {url, filename};
     newListing.geometry = response.body.features[0].geometry;
-    let savedListing = await newListing.save();
-    console.log(savedListing);
+
+    if (req.file) {
+        const result = await cloudinary.uploader.upload(req.file.path, {
+        folder: "wanderlust_DEV",
+        });
+
+        newListing.image = {
+        url: result.secure_url,
+        filename: result.public_id,
+        };
+
+        fs.unlinkSync(req.file.path);
+    }
+
+    await newListing.save();
     req.flash("success", "New Listing Created!");
     res.redirect("/listings");
-}
+};
+
 
 module.exports.renderEditForm = async (req, res) => {
     let {id} = req.params;
@@ -67,30 +79,49 @@ module.exports.renderEditForm = async (req, res) => {
 }
 
 module.exports.updateListing = async (req, res) => {
-    let {id} = req.params;
-    let response = await geocodingClient.forwardGeocode({
+    const { id } = req.params;
+
+    const geoResponse = await geocodingClient.forwardGeocode({
         query: req.body.listing.location,
         limit: 1
-    })
-    .send()
+    }).send();
 
-    if(!response.body?.features?.[0]?.geometry) {
+    if (!geoResponse.body?.features?.[0]?.geometry) {
         req.flash("error", "Invalid Location");
         return res.redirect(`/listings/${id}/edit`);
     }
 
-    let listing = await Listing.findByIdAndUpdate(id, {...req.body.listing, geometry: response.body.features[0].geometry});
-
-    if(typeof req.file !== "undefined") {
-        let url = req.file.path;
-        let filename = req.file.filename;
-        listing.image = {url, filename};
-        await listing.save();
+    const listing = await Listing.findById(id);
+    if (!listing) {
+        req.flash("error", "Listing not found");
+        return res.redirect("/listings");
     }
 
+    // Update basic fields + geometry
+    listing.set({
+        ...req.body.listing,
+        geometry: geoResponse.body.features[0].geometry
+    });
+
+    // If a new file is uploaded, update image info
+    if (req.file) {
+        const result = await cloudinary.uploader.upload(req.file.path, {
+            folder: "wanderlust_DEV"
+        });
+
+        listing.image = {
+            url: result.secure_url,
+            filename: result.public_id
+        };
+
+        fs.unlinkSync(req.file.path); // clean up local file
+    }
+
+    await listing.save();
     req.flash("success", "Listing Updated");
     res.redirect(`/listings/${id}`);
-}
+};
+
 
 module.exports.destroyListing = async (req, res) => {
     let {id} = req.params;
