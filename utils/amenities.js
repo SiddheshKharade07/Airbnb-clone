@@ -6,7 +6,7 @@ const allAmenities = {
     "hair dryer",
     "hot water",
     "shampoo",
-    "shower"
+    "shower",
   ].sort(),
 
   Bedroom: [
@@ -14,7 +14,7 @@ const allAmenities = {
     "hangers",
     "iron",
     "room-darkening blinds",
-    "wardrobe"
+    "wardrobe",
   ].sort(),
 
   Kitchen: [
@@ -24,56 +24,43 @@ const allAmenities = {
     "kitchen",
     "microwave",
     "toaster",
-    "waste compactor"
+    "waste compactor",
   ].sort(),
 
-  Entertainment: [
-    "tv",
-    "wifi",
-    "ethernet cable"
-  ].sort(),
+  Entertainment: ["tv", "wifi", "ethernet cable"].sort(),
 
-  HeatingCooling: [
-    "air conditioning"
-  ].sort(),
+  HeatingCooling: ["air conditioning"].sort(),
 
   Outdoors: [
     "balcony",
     "beach view",
     "outdoor dining area",
-    "swimming pool"
+    "swimming pool",
   ].sort(),
 
   Services: [
     "cleaning available during stay",
     "cleaning products",
     "laundry service",
-    "long term stays"
+    "long term stays",
   ].sort(),
 
-  Safety: [
-    "first aid kit"
-  ].sort(),
+  Safety: ["first aid kit"].sort(),
 
-  Essentials: [
-    "essentials"
-  ].sort(),
+  Essentials: ["essentials"].sort(),
 
-  Accessibility: [
-    "lift",
-    "free parking"
-  ].sort()
+  Accessibility: ["lift", "free parking"].sort(),
 };
 
 function groupAmenitiesByCategory(selectedAmenities) {
   const grouped = {};
 
-  for(let category in allAmenities) {
-    grouped[category] = allAmenities[category].filter(amenity =>
+  for (let category in allAmenities) {
+    grouped[category] = allAmenities[category].filter((amenity) =>
       selectedAmenities.includes(amenity)
     );
   }
   return grouped;
 }
 
-module.exports = {groupAmenitiesByCategory, allAmenities};
+module.exports = { groupAmenitiesByCategory, allAmenities };
