@@ -9,6 +9,7 @@
   font-weight: 600;
   margin-bottom: 1.5rem;
   color: #333;
+  margin-top: 2.5rem;
 }
 
 .category-heading {
@@ -25,7 +26,7 @@
 }
 
 .ami-category ul li {
-    padding-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .ami {
@@ -50,6 +51,10 @@
 
 .ami-category {
   break-inside: avoid;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   padding-left: 0.5rem;
+}
+
+.ami-btn {
+  text-decoration: underline;
 }

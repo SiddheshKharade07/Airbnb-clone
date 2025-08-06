@@ -1,5 +1,5 @@
-if(process.env.NODE_ENV != "production") {
-    require(`dotenv`).config();
+if (process.env.NODE_ENV != "production") {
+  require(`dotenv`).config();
 }
 
 const express = require("express");
@@ -24,16 +24,15 @@ const filterRouter = require("./routes/filter");
 
 const dbUrl = process.env.ATLASDB_URL;
 main()
-.then(() => {
+  .then(() => {
     console.log("connection successful");
-})
-.catch((err) => {
+  })
+  .catch((err) => {
     console.log(err);
-});
-
+  });
 
 async function main() {
-    await mongoose.connect(dbUrl);
+  await mongoose.connect(dbUrl);
 }
 
 app.set("views", path.join(__dirname, "views"));
@@ -44,29 +43,28 @@ app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
 
 const store = MongoStore.create({
-    mongoUrl: dbUrl,
-    crypto: {
-        secret: process.env.SECRET,
-    },
-    touchAfter: 24 * 3600,
+  mongoUrl: dbUrl,
+  crypto: {
+    secret: process.env.SECRET,
+  },
+  touchAfter: 24 * 3600,
 });
 
 store.on("error", () => {
-    console.log("error in MONGO SESSION Store", err);
-})
+  console.log("error in MONGO SESSION Store", err);
+});
 
 const sessionOptions = {
-    store,
-    secret: process.env.SECRET,
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-        expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
-        maxAge: 7 * 24 * 60 * 60 * 1000,
-        httpOnly: true,
-    }
+  store,
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
+    maxAge: 7 * 24 * 60 * 60 * 1000,
+    httpOnly: true,
+  },
 };
-
 
 app.use(flash());
 app.use(session(sessionOptions));
@@ -80,10 +78,10 @@ passport.deserializeUser(User.deserializeUser());
 
 // flash message middleware
 app.use((req, res, next) => {
-    res.locals.success = req.flash("success");
-    res.locals.error = req.flash("error");
-    res.locals.currUser = req.user;
-    next();
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
+  res.locals.currUser = req.user;
+  next();
 });
 
 // Routes
@@ -93,26 +91,19 @@ app.use("/", userRouter);
 app.use("/listings/filter", filterRouter);
 
 app.get("/", (req, res) => {
-    res.redirect("/listings");
+  res.redirect("/listings");
 });
 
-// filters
-// app.get("/listings/filter/farms", async (req, res) => {
-//     let allListings = await Listing.find({category: "farms"});
-//     res.render("listings/index", {allListings});
-// });
-
 app.use((req, res, next) => {
-    next(new ExpressError(404, "Page Not Found!"));
+  next(new ExpressError(404, "Page Not Found!"));
 });
 
 // custom error handling
 app.use((err, req, res, next) => {
-    let { statusCode = 500, message = "Something Went Wrong" } = err;
-    console.log(err);
-    res.status(statusCode).render("error.ejs", {message});
+  let { statusCode = 500, message = "Something Went Wrong" } = err;
+  res.status(statusCode).render("error.ejs", { message });
 });
 
 app.listen(8080, () => {
-    console.log("server is listening on port 8080");
+  console.log("server is listening on port 8080");
 });
