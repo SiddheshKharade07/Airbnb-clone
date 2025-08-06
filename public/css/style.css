@@ -169,7 +169,7 @@ body {
 .booking-info {
   position: sticky !important;
   top: 5rem !important;
-  height: 350px !important;
+  height: 370px !important;
   margin-left: 2.7rem !important;
   margin-right: 1.7rem;
   margin-top: 1rem;
@@ -183,5 +183,58 @@ body {
 .check-inp {
   border: none !important;
   outline: none !important;
-  
+}
+
+.guest-info {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.inner-guest-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2px;
+}
+
+.guest-info-head {
+  width: 8rem;
+  padding-left: 5px;
+}
+
+.incr,
+.decr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+  border: 0.5px solid grey;
+  background-color: white;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.incr:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  border-color: black;
+}
+
+.decr:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  background-color: rgba(211, 211, 211, 0.282);
+  border-color: black;
+}
+
+#guest-info-p {
+  font-size: small;
+  font-weight: 100;
+  padding: 8px;
 }

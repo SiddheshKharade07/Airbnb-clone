@@ -27,13 +27,16 @@
         <h5 class="card-text mb-4">
           Owned by <i><%= listing.owner.username %></i>
         </h5>
+        <p class="card-text">12 guests•3 bedrooms•9 beds•6 bathrooms</p>
+        <hr />
         <p class="card-text"><%= listing.description %></p>
         <p class="card-text"><%= listing.location %></p>
         <p class="card-text"><%= listing.country %></p>
 
         <%- include("../includes/amenities.ejs") %>
       </div>
-      <div class="col-md-5 mt-4">
+
+      <div class="col-md-5 mt-4 reserve-info-container">
         <div class="booking-info card shadow-sm p-4 border rounded-4">
           <div class="card-body">
             <!-- Price Info -->
@@ -69,9 +72,56 @@
               </div>
 
               <!-- Guest Info -->
-              <div class="border-top pt-3">
-                <label class="form-label text-muted">Guests</label>
-                <div class="fw-semibold">2 Adults, 1 Child</div>
+              <div class="position-relative border-top pt-3">
+                <label
+                  class="form-label text-muted btn btn-link"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="false"
+                  aria-controls="collapseOne"
+                >
+                  Guests
+                </label>
+                <div class="fw-semibold" id="guest-summary">1 Guest</div>
+
+                <!-- collapse as dropdown overlay -->
+                <div
+                  class="guest-info collapse position-absolute bg-white border shadow p-3"
+                  id="collapseOne"
+                  style="top: 100%; left: 0; z-index: 1050; min-width: 300px"
+                >
+                  <div class="adult inner-guest-info mb-3">
+                    <h4 class="guest-info-head">Adults</h4>
+                    <button class="incr">+</button>
+                    <p class="guest-info-val">0</p>
+                    <button class="decr">-</button>
+                  </div>
+                  <div class="children inner-guest-info mb-3">
+                    <h4 class="guest-info-head">Children</h4>
+                    <button class="incr">+</button>
+                    <p class="guest-info-val">0</p>
+                    <button class="decr">-</button>
+                  </div>
+                  <div class="pets inner-guest-info mb-3">
+                    <h4 class="guest-info-head">Pet</h4>
+                    <button class="incr">+</button>
+                    <p class="guest-info-val">0</p>
+                    <button class="decr">-</button>
+                  </div>
+                  <p id="guest-info-p">
+                    This place has a maximum of 12 guests, not including
+                    infants. If you're bringing more than 2 pets, please let
+                    your Host know.
+                  </p>
+                  <p
+                    class="collapse-close-btn text-end"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    style="cursor: pointer; text-decoration: underline"
+                  >
+                    Close
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -208,12 +258,4 @@
 <script src="/js/datapicker.js"></script>
 
 <!-- Activate Flatpickr -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    flatpickr("#checkin", {
-      dateFormat: "Y-m-d",
-      minDate: "today",
-      allowInput: false,
-    });
-  });
-</script>
+<script src="/js/datepicker.js"></script>
