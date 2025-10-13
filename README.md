@@ -171,7 +171,7 @@ Siddhesh Kharade 🙋‍♂️
 
 GitHub: SiddheshKharade07
 
-Email: [hnkharade@gmail.com](mailto:hnkharade@gmail.com)
+Email: hnkharade@gmail.com
 
 📝 License
 
