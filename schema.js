@@ -13,14 +13,14 @@ module.exports.listingSchema = Joi.object({
     }).allow(null),
     category: Joi.string()
       .valid(
-        "mountains",
         "rooms",
+        "mountains",
         "farms",
-        "arctic",
-        "beach",
-        "iconic cities",
-        "amazing pools",
-        "camping",
+        "arctics",
+        "beaches",
+        "cities",
+        "pools",
+        "campings",
         "domes",
         "boats"
       )
