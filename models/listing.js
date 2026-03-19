@@ -43,7 +43,7 @@ const listingSchema = new Schema({
       "rooms",
       "farms",
       "arctic",
-      "beach",
+      "beaches",
       "iconic cities",
       "amazing pools",
       "camping",
