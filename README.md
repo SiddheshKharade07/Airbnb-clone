@@ -165,10 +165,11 @@ Siddhesh Kharade 🙋‍♂️
 ├── 📄 schema.js
 ├── 📄 package.json
 ├── 📄 package-lock.json
-├── 📄 **README**.md
+├── 📄 README.md
 ├── 📄 .env
 └── 📄 .gitignore
-
+```
+---
 GitHub: SiddheshKharade07
 
 Email: hnkharade@gmail.com
